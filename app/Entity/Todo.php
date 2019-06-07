@@ -29,4 +29,6 @@ class Todo extends Model
 	protected $fillable = [
 		'name', 'email', 'password',
 	];
+	
+	
 }

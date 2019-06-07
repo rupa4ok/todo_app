@@ -13,6 +13,7 @@ class CreateTodosTable extends Migration
 	        $table->string('name');
 	        $table->string('description');
 	        $table->string('status', 16);
+	        $table->integer('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
