@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entity\Todo;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,7 +19,10 @@ class HomeController extends Controller
 	
 	public function index()
 	{
-		return view('home');
+		$collection = Todo::all();
+		$todo = $collection->groupBy('status');
+		
+		return view('home', compact('todo'));
 	}
 	
 	public function create()
@@ -33,7 +37,9 @@ class HomeController extends Controller
 	
 	public function show($id)
 	{
-		//
+		$id = 1;
+		
+		return view('admin.show', compact('id'));
 	}
 	
 	public function edit($id)

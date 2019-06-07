@@ -13,30 +13,20 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                        @foreach($todo as $key => $item)
                         <div class="col-md-4">
                             <div class="card">
-                                <div class="card-header">TODO</div>
+                                <div class="card-header card-title">{{ $key }}</div>
                                 <div class="card-body">
-                                
+                                    <ul>
+                                        @foreach($item as $data)
+                                            <li><a href="{{ route('admin.show', $data->id) }}">{{ $data->name }}</a></li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-header">DOING</div>
-                                <div class="card-body">
-                                
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-header">DONE</div>
-                                <div class="card-body">
-                                
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                 </div>
 
             </div>
