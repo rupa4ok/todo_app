@@ -13,7 +13,7 @@ class CreateCommentsTable extends Migration
             $table->bigIncrements('id');
             $table->text('comment');
 	        $table->integer('user_id')->references('id')->on('users')->onDelete('CASCADE');
-	        $table->integer('todo_id')->references('id')->on('todos')->onDelete('CASCADE');
+	        $table->integer('parent_id')->references('id')->on('todos')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
