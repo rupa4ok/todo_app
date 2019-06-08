@@ -7,6 +7,8 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
+                <div>Add TODO</div>
+                
                 <div class="row card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -19,8 +21,8 @@
                                 <div class="card-header card-title">{{ $key }}</div>
                                 <div class="card-body">
                                     <ul>
-                                        @foreach($item as $data)
-                                            <li><a href="{{ route('admin.show', $data->id) }}">{{ $data->name }}</a></li>
+                                        @foreach($item as $key => $data)
+                                            <li>{{ ++$key }}.<a href="{{ route('admin.show', $data->id) }}">{{ $data->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>

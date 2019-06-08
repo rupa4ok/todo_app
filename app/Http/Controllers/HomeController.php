@@ -19,7 +19,7 @@ class HomeController extends Controller
 	
 	public function index()
 	{
-		$collection = Todo::all();
+		$collection = Todo::all('id', 'name', 'status');
 		$todo = $collection->groupBy('status');
 		
 		return view('home', compact('todo'));
