@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -25,16 +26,43 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property int $user_id
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\Todo whereUserId($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Entity\Comment[] $comments
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\Todo list()
  */
 class Todo extends Model
 {
-	public const STATUS_TODO = 'todo';
-	public const STATUS_DOING = 'doing';
-	public const STATUS_DONE = 'done';
+	public const STATUS_TODO = 0;
+	public const STATUS_DOING = 1;
+	public const STATUS_DONE = 2;
 	
 	protected $fillable = [
 		'name', 'description', 'user_id', 'status',
 	];
+	
+	public function scopeList(Builder $query)
+	{
+		return $query->with('comments')
+			->withCount('comments')
+			->orderByDesc('created_at')
+			->get()
+			->where('user_id', 1)
+			->groupBy('status')
+			->sortKeys();
+	}
+	
+	public static function statusList(): array
+	{
+		return [
+			self::STATUS_TODO => 'todo',
+			self::STATUS_DOING => 'doing',
+			self::STATUS_DONE => 'done',
+		];
+	}
+	
+	public function comments()
+	{
+		return $this->hasMany(Comment::class, 'parent_id', 'id');
+	}
 	
 	public function isTodo(): bool
 	{

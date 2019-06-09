@@ -1,22 +1,33 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
+use App\Entity\Todo;
+use Auth;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class TodoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('admin.index');
-    }
-
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+	
+	/**
+	 * Получение списка задач с сортировкой по дате создания, групировка по статусу
+	 * Метод list() - scope в Todo->scopeList
+	 *
+	 * @param Todo $todo
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function index(Todo $todo)
+	{
+		$todo = $todo->list();
+		$status = Todo::statusList();
+		
+		return view('home', compact('todo', 'status'));
+	}
+	
     /**
      * Show the form for creating a new resource.
      *
@@ -44,9 +55,15 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Todo $todo)
     {
-        //
+    	$userId = Auth::id();
+	
+	    $todo = $todo->where('id', $id)->get();
+    	
+    	dd($todo);
+    	
+        return view('admin.show', compact('comments', 'todo'));
     }
 
     /**

@@ -18,11 +18,13 @@
                         @foreach($todo as $key => $item)
                         <div class="col-md-4">
                             <div class="card">
-                                <div class="card-header card-title">{{ $key }}</div>
+                                <div class="card-header card-title">{{ $status[$key] }}</div>
                                 <div class="card-body">
                                     <ul>
                                         @foreach($item as $key => $data)
-                                            <li>{{ ++$key }}.<a href="{{ route('admin.show', $data->id) }}">{{ $data->name }}</a></li>
+                                            <li>{{ ++$key }}.<a href="{{ route('show', $data->id) }}">
+                                                {{ $data->name }}</a>-{{ $data->comments_count }}
+                                                -{{ $data->created_at }}</li>
                                         @endforeach
                                     </ul>
                                 </div>

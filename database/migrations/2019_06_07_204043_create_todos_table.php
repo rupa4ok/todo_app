@@ -12,7 +12,7 @@ class CreateTodosTable extends Migration
             $table->bigIncrements('id');
 	        $table->string('name');
 	        $table->string('description');
-	        $table->string('status', 16);
+	        $table->integer('status');
 	        $table->integer('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->timestamps();
         });

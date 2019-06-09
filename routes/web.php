@@ -1,6 +1,7 @@
 <?php
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'TodoController@index')->name('index');
+Route::get('/todo-{id}', 'TodoController@show')->name('show');
 
 Auth::routes();
 
