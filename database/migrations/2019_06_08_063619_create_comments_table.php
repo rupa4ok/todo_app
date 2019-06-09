@@ -14,7 +14,8 @@ class CreateCommentsTable extends Migration
             $table->text('comment');
 	        $table->integer('user_id')->references('id')->on('users')->onDelete('CASCADE');
 	        $table->integer('parent_id')->references('id')->on('todos')->onDelete('CASCADE');
-            $table->timestamps();
+	        $table->boolean('completed')->default(false);
+	        $table->timestamps();
         });
     }
     

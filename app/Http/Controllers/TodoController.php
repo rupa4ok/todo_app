@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entity\Comment;
 use App\Entity\Todo;
 use Auth;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class TodoController extends Controller
 		$todo = $todo->list();
 		$status = Todo::statusList();
 		
-		return view('home', compact('todo', 'status'));
+		return view('todo.index', compact('todo', 'status'));
 	}
 	
     /**
@@ -48,22 +49,27 @@ class TodoController extends Controller
     {
         //
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id, Todo $todo)
+	
+	/**
+	 * Страница отдельной личной задачи со списком комментариев к задаче
+	 *
+	 * @param Todo $todo
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+    public function show(Todo $todo)
     {
     	$userId = Auth::id();
-	
-	    $todo = $todo->where('id', $id)->get();
     	
-    	dd($todo);
+    	$comments = Comment::where(
+    		[
+			    'parent_id' => $todo->id,
+			    'user_id' => $userId
+		    ]
+	    )
+		    ->orderByDesc('created_at')
+		    ->get();
     	
-        return view('admin.show', compact('comments', 'todo'));
+        return view('todo.show', compact('todo', 'comments'));
     }
 
     /**

@@ -39,6 +39,12 @@ class Todo extends Model
 		'name', 'description', 'user_id', 'status',
 	];
 	
+	/**
+	 * TodoController() method list()
+	 *
+	 * @param Builder $query
+	 * @return Builder[]|\Illuminate\Database\Eloquent\Collection
+	 */
 	public function scopeList(Builder $query)
 	{
 		return $query->with('comments')
