@@ -8,11 +8,17 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-6">{{ $todo->name }}</div>
-                            <div class="col-md-6 date">{{ $todo->created_at }}</div>
+                            <div class="col-md-6 date">
+                                <p>{{ $todo->created_at }}</p>
+                                <p class="card-title">{{ $todo->isStatus($todo->status) }}</p>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="card-body">
+                        <div class="col-md-12">
+                            {{ $todo->description }}
+                        </div>
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}

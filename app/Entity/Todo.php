@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use DomainException;
 
 /**
  * App\Entity\Todo
@@ -28,6 +29,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\Todo whereUserId($value)
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Entity\Comment[] $comments
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\Todo list()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\Todo latest()
  */
 class Todo extends Model
 {
@@ -56,6 +58,13 @@ class Todo extends Model
 			->sortKeys();
 	}
 	
+	public function scopeLatest(Builder $query)
+	{
+		return $query
+			->latest()
+			->limit(10);
+	}
+	
 	public static function statusList(): array
 	{
 		return [
@@ -68,6 +77,12 @@ class Todo extends Model
 	public function comments()
 	{
 		return $this->hasMany(Comment::class, 'parent_id', 'id');
+	}
+	
+	public function isStatus($status)
+	{
+		$statusList = self::statusList();
+		return $statusList[$status];
 	}
 	
 	public function isTodo(): bool

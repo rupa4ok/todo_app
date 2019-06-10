@@ -10671,3 +10671,7 @@ a.text-dark:focus {
   text-align: right;
 }
 
+.button-delete {
+  display: inline;
+}
+

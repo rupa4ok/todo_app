@@ -49591,6 +49591,14 @@ var app = new Vue({
   el: '#app'
 });
 
+function proverka() {
+  if (confirm("Подтвердите удаление объекта")) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

@@ -36,9 +36,9 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="description" class="col-form-label">Email</label>
-                                    <textarea class="form-control" name="description" id="description" cols="30" rows="10"
-                                              value="{{ old('description') }}"></textarea>
+                                    <label for="description" class="col-form-label">Description</label>
+                                    <textarea class="form-control" name="description" id="description" cols="20"
+                                              rows="5"></textarea>
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
@@ -69,7 +69,11 @@
                         <div class="col-md-12 mt-4">
                             <h4>Last TODO</h4>
                         </div>
-                    
+                        @foreach($todoList as $value)
+                            <div class="col-md-12">
+                                {{ $value->id }}. <a href="{{ route('todo.show', $value->id) }}">{{ $value->name }}</a>
+                            </div>
+                        @endforeach
                     </div>
                 
                 </div>

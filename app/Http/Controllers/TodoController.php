@@ -30,33 +30,22 @@ class TodoController extends Controller
 		return view('todo.index', compact('todo', 'status'));
 	}
 	
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(Todo $todo)
     {
-    	$statuses = Todo::statusList();
-    	
-        return view('todo.create', compact('statuses'));
+    	$statuses = $todo->statusList();
+	    $todoList = $todo->latest()->get();
+        return view('todo.create', compact('statuses', 'todoList'));
     }
-
-    /**
-     * Store a newly created todo.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(TodoRequest $request)
+    
+    public function store(TodoRequest $request, Todo $todo)
     {
- 	    $todo = Todo::create([
+	    $todo->create([
 		    'name' => $request['name'],
 		    'description' => $request['description'] ?? '',
 		    'status' => $request['status'],
 		    'user_id' => Auth::id()
 	    ]);
-	    return redirect()->route('todo.show', $todo);
+	    return redirect()->route('todo.show', compact('todo'));
     }
 	
 	/**
@@ -65,11 +54,10 @@ class TodoController extends Controller
 	 * @param Todo $todo
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
-    public function show(Todo $todo)
+    public function show(Todo $todo, Comment $comment)
     {
     	$userId = Auth::id();
-    	
-    	$comments = Comment::where(
+    	$comments = $comment->where(
     		[
 			    'parent_id' => $todo->id,
 			    'user_id' => $userId
@@ -77,41 +65,30 @@ class TodoController extends Controller
 	    )
 		    ->orderByDesc('created_at')
 		    ->get();
-    	
         return view('todo.show', compact('todo', 'comments'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    
+    public function edit(Todo $todo)
     {
-        //
+	    $todoList = $todo->latest()->get();
+	    $statuses = $todo->statusList();
+        return view('todo.edit', compact('todo', 'todoList', 'statuses'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    
+    public function update(TodoRequest $request, Todo $todo)
     {
-        //
+	    $todo->update([
+		    'name' => $request['name'],
+		    'description' => $request['description'] ?? '',
+		    'status' => $request['status'],
+	    ]);
+	    return redirect()->route('todo.index', $todo);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    
+    public function destroy(Todo $todo)
     {
-        //
+	    $todo->delete();
+	
+	    return redirect()->route('todo.index', $todo);
     }
 }

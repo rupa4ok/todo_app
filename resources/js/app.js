@@ -31,3 +31,11 @@ Vue.component('tasks', require('./components/Tasks.vue').default);
 const app = new Vue({
     el: '#app',
 });
+
+function proverka() {
+    if (confirm("Подтвердите удаление объекта")) {
+        return true;
+    } else {
+        return false;
+    }
+}

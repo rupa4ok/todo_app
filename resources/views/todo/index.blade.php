@@ -25,8 +25,15 @@
                                     <ul>
                                         @foreach($item as $key => $data)
                                             <li>{{ ++$key }}.<a href="{{ route('todo.show', $data->id) }}">
-                                                {{ $data->name }}</a>-{{ $data->comments_count }}
-                                                -{{ $data->created_at }}
+                                                {{ $data->name }}</a>
+                                                Comments: {{ $data->comments_count }}<br>
+                                                {{ $data->created_at }}<br>
+                                                <form method="POST" action="{{ route('todo.destroy', $data->id) }}" class="mr-1 button-delete">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger">x</button>
+                                                </form>
+                                                <a href="{{ route('todo.edit', $data->id) }}" class="btn btn-primary mr-1">Edit</a>
                                                 <hr>
                                             </li>
                                         @endforeach
