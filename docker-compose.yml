@@ -7,7 +7,7 @@ services:
     volumes:
       - ./:/var/www
     ports:
-      - "8080:80"
+      - "8082:80"
     links:
       - php-fpm
   php-fpm:
@@ -49,15 +49,15 @@ services:
       - ./storage/docker/mysql:/var/lib/mysql
     environment:
       - "MYSQL_ROOT_PASSWORD=secret"
-      - "MYSQL_USER=app"
+      - "MYSQL_USER=root"
       - "MYSQL_PASSWORD=secret"
       - "MYSQL_DATABASE=app"
     ports:
-      - "33061:3306"
+      - "33062:3306"
   redis:
     image: redis:3.0
     ports:
-      - "63791:6379"
+      - "63792:6379"
   node:
     image: node:8.6-alpine
     volumes:
@@ -76,4 +76,4 @@ services:
     volumes:
       - ./storage/docker/elasticsearch:/usr/share/elasticsearch/data
     ports:
-      - "9201:9200"
+      - "9202:9200"
