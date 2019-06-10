@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c180c35c-3715-45bc-84b1-d74458a5a012" name="Default Changelist" comment="Dashboard for todo">
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c180c35c-3715-45bc-84b1-d74458a5a012" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,11 +70,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env.example">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="42" selection-start-column="42" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/logging.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
-              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -168,6 +186,8 @@
         <option value="$PROJECT_DIR$/resources/views/todo/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TodoController.php" />
         <option value="$PROJECT_DIR$/.env.example" />
+        <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/config/logging.php" />
       </list>
     </option>
   </component>
@@ -313,6 +333,11 @@
             <path>
               <item name="todo_app" type="b2602c69:ProjectViewProjectNode" />
               <item name="todo_app" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todo_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todo_app" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -449,7 +474,7 @@
       <workItem from="1560139468596" duration="1967000" />
       <workItem from="1560142515584" duration="1778000" />
       <workItem from="1560144402688" duration="1598000" />
-      <workItem from="1560146377657" duration="1106000" />
+      <workItem from="1560146377657" duration="1598000" />
     </task>
     <task id="LOCAL-00001" summary="Add auth">
       <created>1559939807643</created>
@@ -521,11 +546,32 @@
       <option name="project" value="LOCAL" />
       <updated>1560147137392</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Heroku config">
+      <created>1560147511105</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1560147511105</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Dashboard for todo">
+      <created>1560147528657</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1560147528657</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add procfile heroku app">
+      <created>1560147679460</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1560147679460</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51425000" />
+    <option name="totallyTimeSpent" value="51917000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="32" width="1853" height="1048" extended-state="6" />
@@ -545,7 +591,7 @@
       <window_info anchor="bottom" id="Docker" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3291714" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291714" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3291714" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3291714" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -604,7 +650,6 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add auth" />
     <MESSAGE value="Addd todo entity and migration" />
-    <MESSAGE value="Dashboard for todo" />
     <MESSAGE value="Todo collections" />
     <MESSAGE value="Add comments entity and migration" />
     <MESSAGE value="New comment factory and seeder" />
@@ -612,23 +657,12 @@
     <MESSAGE value="Comments view and vue component" />
     <MESSAGE value="Add create todo page" />
     <MESSAGE value="Edit todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit todo" />
+    <MESSAGE value="Heroku config" />
+    <MESSAGE value="Dashboard for todo" />
+    <MESSAGE value="Add procfile heroku app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add procfile heroku app" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -976,8 +1010,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env.example">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="42" selection-start-column="42" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/logging.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
