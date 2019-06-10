@@ -1,6 +1,6 @@
 Demo: http://todoapp1234445.herokuapp.com/
 Login: test@mail.ru
-Password: test
+Password: testtest
 
 Api: http://todoapp1234445.herokuapp.com/api/todo
 
