@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('comments', 'Api\CommentController');
+
+Route::resource('todo', 'Api\TodoController');
