@@ -6,7 +6,6 @@ use App\Entity\Comment;
 use App\Entity\Todo;
 use App\Http\Requests\TodoRequest;
 use Auth;
-use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {

@@ -40,19 +40,21 @@
                                     <label for="description" class="col-form-label">Description</label>
                                     <input id="description" type="description"
                                            class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}"
-                                           name="description" value="{{ old('description', $todo->description) }}" required>
+                                           name="description" value="{{ old('description', $todo->description) }}"
+                                           required>
                                     @if ($errors->has('description'))
                                         <span
                                         class="invalid-feedback"><strong>{{ $errors->first('description') }}</strong></span>
                                     @endif
                                 </div>
-    
+                                
                                 <div class="form-group">
                                     <label for="status" class="col-form-label">Status</label>
                                     <select name="status" id="status"
                                             class="form-control {{ $errors->has('status') ? ' is-invalid' : '' }}">
                                         @foreach($statuses as $value => $label)
-                                            <option value="{{ $value }}" {{ $value === old('status', $todo->status) ? 'selected' : '' }}>
+                                            <option
+                                            value="{{ $value }}" {{ $value === old('status', $todo->status) ? 'selected' : '' }}>
                                                 {{ $label }}
                                             </option>
                                         @endforeach
@@ -77,6 +79,13 @@
                                 {{ $value->id }}. <a href="{{ route('todo.show', $value->id) }}">{{ $value->name }}</a>
                             </div>
                         @endforeach
+                        
+                        <div class="container" id="app">
+                            <div class="row">
+                                <tasks></tasks>
+                            </div>
+                        </div>
+                    
                     </div>
                 
                 </div>
