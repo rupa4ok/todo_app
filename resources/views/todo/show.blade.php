@@ -5,7 +5,12 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">{{ $todo->name }}</div>
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6">{{ $todo->name }}</div>
+                            <div class="col-md-6 date">{{ $todo->created_at }}</div>
+                        </div>
+                    </div>
                     
                     <div class="card-body">
                         @if (session('status'))

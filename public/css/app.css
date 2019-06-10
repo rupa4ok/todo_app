@@ -10659,3 +10659,15 @@ a.text-dark:focus {
   padding-left: 5px;
 }
 
+.done {
+  display: none;
+}
+
+.pull-right {
+  float: right;
+}
+
+.date {
+  text-align: right;
+}
+

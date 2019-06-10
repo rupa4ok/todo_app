@@ -26,10 +26,14 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\Comment whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\Comment whereUserId($value)
  * @mixin \Eloquent
+ * @property string $name
+ * @property int $completed
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\Comment whereCompleted($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\Comment whereName($value)
  */
 class Comment extends Model
 {
-	protected $fillable = ['comment', 'user_id', 'parent_id'];
+	protected $fillable = ['name', 'user_id', 'parent_id'];
 	
 	public function parent()
 	{
@@ -39,5 +43,11 @@ class Comment extends Model
 	public function children()
 	{
 		return $this->hasMany(User::class, 'user_id', 'id');
+	}
+	
+	public static function getReffer()
+	{
+		$url = explode("/",$_SERVER["HTTP_REFERER"]);
+		return $url['4'];
 	}
 }

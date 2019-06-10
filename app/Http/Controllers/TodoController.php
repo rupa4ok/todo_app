@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Entity\Comment;
 use App\Entity\Todo;
+use App\Http\Requests\TodoRequest;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -36,18 +37,26 @@ class TodoController extends Controller
      */
     public function create()
     {
-        //
+    	$statuses = Todo::statusList();
+    	
+        return view('todo.create', compact('statuses'));
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created todo.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TodoRequest $request)
     {
-        //
+ 	    $todo = Todo::create([
+		    'name' => $request['name'],
+		    'description' => $request['description'] ?? '',
+		    'status' => $request['status'],
+		    'user_id' => Auth::id()
+	    ]);
+	    return redirect()->route('todo.show', $todo);
     }
 	
 	/**

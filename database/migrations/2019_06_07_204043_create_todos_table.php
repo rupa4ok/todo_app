@@ -11,7 +11,7 @@ class CreateTodosTable extends Migration
         Schema::create('todos', function (Blueprint $table) {
             $table->bigIncrements('id');
 	        $table->string('name');
-	        $table->string('description');
+	        $table->string('description')->default(null);;
 	        $table->integer('status');
 	        $table->integer('user_id')->references('id')->on('users')->onDelete('CASCADE');
             $table->timestamps();
