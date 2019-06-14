@@ -80,7 +80,7 @@
                             </div>
                         @endforeach
                         
-                        <div class="container" id="app">
+                        <div class="container mt-2" id="app">
                             <div class="row">
                                 <tasks></tasks>
                             </div>

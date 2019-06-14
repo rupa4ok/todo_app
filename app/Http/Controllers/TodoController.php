@@ -69,7 +69,7 @@ class TodoController extends Controller
     
     public function edit(Todo $todo)
     {
-	    $todoList = $todo->latest()->get();
+	    $todoList = $todo->get();
 	    $statuses = $todo->statusList();
         return view('todo.edit', compact('todo', 'todoList', 'statuses'));
     }
