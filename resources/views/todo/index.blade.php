@@ -43,6 +43,14 @@
                         </div>
                         @endforeach
                 </div>
+                
+{{--                <div class="row">--}}
+{{--                    @foreach($jdata as $key => $item)--}}
+{{--                        <div class="col-md-12">--}}
+{{--                            {{ $key }}. {{ $item->f1 }} - {{ $item->f13 }}--}}
+{{--                        </div>--}}
+{{--                    @endforeach--}}
+{{--                </div>--}}
 
             </div>
         </div>

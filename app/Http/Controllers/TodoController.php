@@ -6,7 +6,12 @@ use App\Entity\Comment;
 use App\Entity\Todo;
 use App\Http\Requests\TodoRequest;
 use Auth;
+use GuzzleHttp\Client;
+use GuzzleHttp\Cookie\CookieJar;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Request as Req;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class TodoController extends Controller
 {
@@ -26,8 +31,27 @@ class TodoController extends Controller
 	{
 		$todo = $todo->list();
 		$status = Todo::statusList();
+//
+//		$jar = new CookieJar();
+//
+//		$client = new Client(['cookies' => true]);
+//		$res = $client->request('POST', 'https://app.skybase.ru/app3651/login?login=ladisov@gmail.com&password=123123123', [
+//			'login' => 'ladisov@gmail.com',
+//			'password' => 123123123
+//		]);
+//
+//		$cookieJar = $client->getConfig('cookies');
+//		$cookieJar->toArray();
+//
+//		$res1 = $client->get('https://app.skybase.ru/app3651/tables/10001?outputMode=json', [
+//			'cookies' => $cookieJar
+//		]);
+//
+//		$jsonData = $res1->getBody()->getContents();
+//
+//		$jdata = json_decode($jsonData);
 		
-		return view('todo.index', compact('todo', 'status'));
+		return view('todo.index', compact('todo', 'status', 'jdata'));
 	}
 	
     public function create(Todo $todo)
