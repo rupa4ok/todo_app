@@ -1,8 +1,6 @@
-Demo: http://todoapp1234445.herokuapp.com/
+Demo: http://todostack.herokuapp.com
 Login: test@mail.ru
 Password: testtest
-
-Api: http://todoapp1234445.herokuapp.com/api/todo
 
 Local install:
 
