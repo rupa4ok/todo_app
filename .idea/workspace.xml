@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c180c35c-3715-45bc-84b1-d74458a5a012" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TodosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TodosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -272,7 +270,7 @@
       <workItem from="1560142515584" duration="1778000" />
       <workItem from="1560144402688" duration="1598000" />
       <workItem from="1560146377657" duration="1598000" />
-      <workItem from="1566392740665" duration="1719000" />
+      <workItem from="1566392740665" duration="1823000" />
     </task>
     <task id="LOCAL-00001" summary="Add auth">
       <created>1559939807643</created>
@@ -393,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566394141258</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="New api route">
+      <created>1566394472027</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1566394472027</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
