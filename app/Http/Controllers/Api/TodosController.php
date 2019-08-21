@@ -6,7 +6,7 @@ use App\Entity\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CommentController extends Controller
+class TodosController extends Controller
 {
 	/**
 	 * Display a listing of the resource.
