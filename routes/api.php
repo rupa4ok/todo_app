@@ -23,5 +23,5 @@ Route::resource('todo', 'Api\TodoController');
 
 Route::group(['as' => 'api.', 'namespace' => 'Api'],
 	function () {
-		Route::get('/v1', 'HomeController@home');
+		Route::get('/v1', 'TodoController@home');
 	});

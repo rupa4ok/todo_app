@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c180c35c-3715-45bc-84b1-d74458a5a012" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TodoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TodoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,6 +156,16 @@
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/zircote/swagger-php" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/darkaonline/l5-swagger" />
+      <path value="$PROJECT_DIR$/vendor/swagger-api/swagger-ui" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -261,7 +272,7 @@
       <workItem from="1560142515584" duration="1778000" />
       <workItem from="1560144402688" duration="1598000" />
       <workItem from="1560146377657" duration="1598000" />
-      <workItem from="1566392740665" duration="107000" />
+      <workItem from="1566392740665" duration="752000" />
     </task>
     <task id="LOCAL-00001" summary="Add auth">
       <created>1559939807643</created>
@@ -354,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560147679460</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="New api route">
+      <created>1566392891131</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1566392891131</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,6 +423,7 @@
     <MESSAGE value="Heroku config" />
     <MESSAGE value="Dashboard for todo" />
     <MESSAGE value="Add procfile heroku app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add procfile heroku app" />
+    <MESSAGE value="New api route" />
+    <option name="LAST_COMMIT_MESSAGE" value="New api route" />
   </component>
 </project>
