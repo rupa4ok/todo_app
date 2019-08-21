@@ -13,7 +13,7 @@ class TodosController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function home()
+	public function index()
 	{
 		return Comment::latest()
 			->get();
