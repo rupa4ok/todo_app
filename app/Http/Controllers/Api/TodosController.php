@@ -27,8 +27,8 @@ class TodosController extends Controller
 	{
 		$comment = new Comment();
 		$comment->name = $request->name;
+		$comment->parent_id = 1;
 		$comment->save();
-		
 		return $comment;
 	}
 	
@@ -44,7 +44,6 @@ class TodosController extends Controller
 		$comment = Comment::findOrFail($id);
 		$comment->completed = $request->completed;
 		$comment->update();
-		
 		return $comment;
 	}
 	
@@ -52,7 +51,6 @@ class TodosController extends Controller
 	{
 		$comment = Comment::findOrFail($id);
 		$comment->delete();
-		
 		return 204;
 	}
 }
