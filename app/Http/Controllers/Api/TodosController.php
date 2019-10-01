@@ -16,7 +16,7 @@ class TodosController extends Controller
 	public function index()
 	{
 		return Comment::latest()
-			->get();
+			->get()->header('Access-Control-Allow-Origin' , '*');
 	}
 	
 	/**
